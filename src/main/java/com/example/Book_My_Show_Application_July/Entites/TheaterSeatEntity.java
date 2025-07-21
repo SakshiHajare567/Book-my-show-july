@@ -1,7 +1,8 @@
 package com.example.Book_My_Show_Application_July.Entites;
 
 import com.example.Book_My_Show_Application_July.Enums.SeatType;
-import jakarta.persistence.*;
+
+import javax.persistence.*;
 
 @Entity
 @Table(name="theater_seat")
@@ -17,7 +18,7 @@ public class TheaterSeatEntity {
 
     //child "theater_seat connect to parent:theater
     @ManyToOne
-    @JoinColumn(name = "theater_id")
+    @JoinColumn
     private TheaterEntity theaterEntity ;
 
     public TheaterSeatEntity() {
@@ -48,10 +49,12 @@ public class TheaterSeatEntity {
     }
 
     public TheaterEntity getTheaterEntity() {
+
         return theaterEntity;
     }
 
     public void setTheaterEntity(TheaterEntity theaterEntity) {
+
         this.theaterEntity = theaterEntity;
     }
 

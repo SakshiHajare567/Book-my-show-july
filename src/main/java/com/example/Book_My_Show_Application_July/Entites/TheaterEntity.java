@@ -1,7 +1,7 @@
 package com.example.Book_My_Show_Application_July.Entites;
 
-import jakarta.persistence.*;
 
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,14 +16,12 @@ public class TheaterEntity {
 
     private String location ;
 
-
-    // "theater connected to child theater_seat
-    @OneToMany(mappedBy = "theaterEntity" ,cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "theaterEntity", cascade = CascadeType.ALL)
     private List<TheaterSeatEntity> theaterSeatEntityList = new ArrayList<>();
 
-    //theater :parent connect child:show entity
-    @OneToMany(mappedBy = "theaterEntity",cascade = CascadeType.ALL)
-    private List<ShowEntity>showEntityList=new ArrayList<>();
+
+    @OneToMany(mappedBy = "theaterEntity", cascade = CascadeType.ALL)
+    private List<ShowEntity> showEntityList = new ArrayList<>();
 
     public TheaterEntity() {
     }

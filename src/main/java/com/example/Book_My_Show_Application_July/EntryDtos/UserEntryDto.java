@@ -1,6 +1,6 @@
 package com.example.Book_My_Show_Application_July.EntryDtos;
 
-import jakarta.persistence.Column;
+
 
 public class UserEntryDto {
     private String name ;

@@ -1,10 +1,10 @@
 package com.example.Book_My_Show_Application_July.Entites;
 
 import com.example.Book_My_Show_Application_July.Enums.ShowType;
-import jakarta.persistence.*;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
+import javax.persistence.*;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.ArrayList;
@@ -27,22 +27,21 @@ public class ShowEntity {
 
 
     @CreationTimestamp
-    @Column(name = "created_on", updatable = false)
     private Date createdOn;
 
     @UpdateTimestamp
-    @Column(name = "updated_on")
     private Date updatedOn;
 
-    //child:show connect to the parent:movie
+    //show Entity:child and movies Entity"parent
     @ManyToOne
-    @JoinColumn
-    MovieEntity movieEntity ;
+    @JoinColumn  // FK column name
+    private MovieEntity movieEntity;
 
-    //child:show entity connect to therater entity
+    //show Entity : child and theater Entity : parent
     @ManyToOne
-    @JoinColumn
-    private TheaterEntity theaterEntity ;
+    @JoinColumn// FK column name
+    private TheaterEntity theaterEntity;
+
 
     //parent :show Entity connect Child:ticket
     @OneToMany(mappedBy = "showEntity", cascade = CascadeType.ALL)  // ✅ correct field name
@@ -52,9 +51,6 @@ public class ShowEntity {
     //parent:show Entity connect to child : show_seat Entity
     @OneToMany(mappedBy = "showEntity",cascade = CascadeType.ALL)
     private List<ShowSeatEntity>listOfShowSeats=new ArrayList<>();
-
-
-
 
     public ShowEntity() {
     }
@@ -140,4 +136,3 @@ public class ShowEntity {
         this.listOfShowSeats = listOfShowSeats;
     }
 }
-

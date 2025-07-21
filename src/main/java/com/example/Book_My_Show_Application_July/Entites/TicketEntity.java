@@ -1,7 +1,7 @@
 package com.example.Book_My_Show_Application_July.Entites;
 
-import jakarta.persistence.*;
 
+import javax.persistence.*;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.UUID;
@@ -24,6 +24,8 @@ public class TicketEntity {
     private String ticketId= UUID.randomUUID().toString();
 
     private String theaterName;
+
+    private String bookedSeats ;
 
     //private String bookedSeats;
 
@@ -110,6 +112,15 @@ public class TicketEntity {
     }
 
     public void setShowEntity(ShowEntity showEntity) {
+
         this.showEntity = showEntity;
+    }
+
+    public String getBookedSeats() {
+        return bookedSeats;
+    }
+
+    public void setBookedSeats(String bookedSeats) {
+        this.bookedSeats = bookedSeats;
     }
 }

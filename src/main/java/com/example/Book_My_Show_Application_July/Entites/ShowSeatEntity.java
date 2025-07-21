@@ -1,8 +1,9 @@
 package com.example.Book_My_Show_Application_July.Entites;
 
 import com.example.Book_My_Show_Application_July.Enums.SeatType;
-import jakarta.persistence.*;
 
+
+import javax.persistence.*;
 import java.util.Date;
 
 @Entity
@@ -12,7 +13,7 @@ public class ShowSeatEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private  int id ;
 
-    private boolean isbooked ;
+    private boolean isBooked ;
     private  int price ;
     private String seatNo ;
     private Date bookedAt ;//time of seatbook
@@ -21,9 +22,12 @@ public class ShowSeatEntity {
     private SeatType seatType;
 
     //chid :show_seat Entity connect to parent:show Entity
+
     @ManyToOne
     @JoinColumn
-    private ShowEntity showEntity ;
+    private ShowEntity showEntity;
+
+
 
     public ShowSeatEntity() {
     }
@@ -33,16 +37,10 @@ public class ShowSeatEntity {
     }
 
     public void setId(int id) {
+
         this.id = id;
     }
 
-    public boolean isIsbooked() {
-        return isbooked;
-    }
-
-    public void setIsbooked(boolean isbooked) {
-        this.isbooked = isbooked;
-    }
 
     public int getPrice() {
         return price;
@@ -81,6 +79,17 @@ public class ShowSeatEntity {
     }
 
     public void setShowEntity(ShowEntity showEntity) {
+
         this.showEntity = showEntity;
     }
+
+    public boolean isBooked() {
+
+        return isBooked;
+    }
+
+    public void setBooked(boolean booked) {
+        isBooked = booked;
+    }
 }
+

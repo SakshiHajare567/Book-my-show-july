@@ -1,7 +1,7 @@
 package com.example.Book_My_Show_Application_July.Entites;
 
-import jakarta.persistence.*;
 
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 

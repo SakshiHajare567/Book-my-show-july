@@ -2,8 +2,8 @@ package com.example.Book_My_Show_Application_July.Entites;
 
 import com.example.Book_My_Show_Application_July.Enums.Genre;
 import com.example.Book_My_Show_Application_July.Enums.Language;
-import jakarta.persistence.*;
 
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
